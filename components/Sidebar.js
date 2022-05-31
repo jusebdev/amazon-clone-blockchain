@@ -1,5 +1,6 @@
 import Image from "next/image";
-import React from "react";
+import React, { useContext } from "react";
+import { AmazonContext } from "../context/AmazonContext";
 import { ConnectButton } from "web3uikit";
 import Link from "next/link";
 import logo from "../assets/amazon_logo.png";
@@ -7,10 +8,7 @@ import logoFull from "../assets/amazon_logo_full.png";
 import { FaBox } from "react-icons/fa";
 import { BsFillBookmarkFill } from "react-icons/bs";
 import { BsFillPersonFill } from "react-icons/bs";
-
-
-const isAuthenticated = true; //hardcoded
-const username = "john";
+import { AiOutlineHistory } from "react-icons/ai";
 
 function Sidebar() {
 	const styles = {
@@ -29,6 +27,14 @@ function Sidebar() {
 		amazonLogo: `mr-4 flex object-cover`,
 		companyName: `text-lg font-bold flex flex-1 pl-10 items-center mt-[20px]`,
 	};
+
+	const {
+		isAuthenticated,
+		nickname,
+		setNickname,
+		username,
+		handleSetUsername,
+	} = useContext(AmazonContext);
 
 	return (
 		<div className={styles.container}>
@@ -50,15 +56,14 @@ function Sidebar() {
 									<input
 										type="text"
 										placeholder="Username..."
-										className={usernameInput}
-										// value={nickname}
+										className={styles.usernameInput}
+										value={nickname}
 										onChange={(e) => setNickname(e.target.value)}
 									/>
 								</div>
 								<button
 									className={styles.setNickname}
-									//  onClick={handleSetUsername}
-								></button>
+									onClick={handleSetUsername}>Set Nickname</button>
 							</>
 						) : (
 							<div>
@@ -97,13 +102,18 @@ function Sidebar() {
 					<BsFillPersonFill />
 					Saved
 				</div>
+				<Link href="/history">
+					<div className={styles.menuItem}>
+						<AiOutlineHistory />
+						Transaction History
+					</div>
+				</Link>
+			</div>
+			<div className={styles.companyName}>
+				<Image src={logoFull} alt="amazon" height={100} width={100} />
 			</div>
 		</div>
 	);
 }
 
 export default Sidebar;
-
-
-
-//MIN 29:27

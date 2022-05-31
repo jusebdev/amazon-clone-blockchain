@@ -1,15 +1,19 @@
 import "../styles/globals.css";
 import { MoralisProvider } from "react-moralis";
-//CONNECT TO MORALIS SERVER BEFORE TO START 
+//CONNECT TO MORALIS SERVER BEFORE TO START
 
+import { AmazonProvider, AMazonProvider } from "../context/AmazonContext";
 
 function MyApp({ Component, pageProps }) {
 	return (
-		<MoralisProvider serverUrl={process.env.NEXT_PUBLIC_MORALIS_SERVER}
-    appId={process.env.NEXT_PUBLIC_MORALIS_APP_ID}>
-			<Component {...pageProps} />
+		<MoralisProvider
+			serverUrl={process.env.NEXT_PUBLIC_MORALIS_SERVER}
+			appId={process.env.NEXT_PUBLIC_MORALIS_APP_ID}>
+			<AmazonProvider>
+				<Component {...pageProps} />
+			</AmazonProvider>
 		</MoralisProvider>
-	); 
+	);
 }
 
 export default MyApp;
