@@ -3,7 +3,7 @@ const nextConfig = {
 	reactStrictMode: true,
 	images: {
 		domains: [
-			"1h3.googleusercontent.com",
+			"lh3.googleusercontent.com",
 			"openseauserdata.com",
 			"brand.assets.adidas.com",
 			"media0.giphy.com",
@@ -12,7 +12,6 @@ const nextConfig = {
 			"media2.giphy.com",
 			"media3.giphy.com",
 			"media4.giphy.com",
-			
 		],
 	},
 };
