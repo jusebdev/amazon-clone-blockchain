@@ -39,7 +39,7 @@ const { openModal, isModalOpen, closeModal } = useModal()
 <div className={styles.search}>
    <input
    type='text'
-   placeholder='Search your assets...'
+   placeholder='Search Your Assets...'
    className={styles.searchInput}
    
    />
@@ -48,15 +48,13 @@ const { openModal, isModalOpen, closeModal } = useModal()
     <div className={styles.menu}>
         <div className={styles.menuItem}>New Releases</div>
         <div className={styles.menuItem}>Featured</div>
-
-
     { balance?(
     
     <div className={(styles.balance, styles.menuItem)} onClick={openModal}>
 {balance}
 <FaCoins className={styles.coins}/>
 <Modal isOpen={isModalOpen} transition={ModalTransition.SCALE}>
-    {/* <BuyModal close={closeModal} buyTokens={buyTokens} /> */}
+    {/* <BuyModal close={closeModal} /> */}
 </Modal>
     </div>
     ) : (
@@ -66,10 +64,10 @@ const { openModal, isModalOpen, closeModal } = useModal()
             >
               0 AC <FaCoins className={styles.coins} />
               <Modal isOpen={isModalOpen} transition={ModalTransition.SCALE}>
-                {/* <BuyModal close={closeModal} buyTokens={buyTokens} /> */}
+                {/* <BuyModal close={closeModal} /> */}
               </Modal>
             </div>
-            )};
+            )}
             <CgMenuGridO fontSize={30} className={styles.menuItem}/>
     </div>
 </div>
