@@ -13,9 +13,8 @@ import {
   ModalTransition
 
 } from 'react-simple-hook-modal'
-import 'react-simple-hook-modal/dist/styles.css'
+import 'react-simple-hook-modal/dist/styles.css';
 
-const balance = '99'
 
 
 const Header = () => {
@@ -36,7 +35,11 @@ const Header = () => {
     <ModalProvider>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <Image src={logo} alt='amazon' height={100} width={100}
+          <Image
+            src={logo}
+            alt='amazon'
+            height={100}
+            width={150}
             className='object-cover'
           />
         </div>
@@ -45,7 +48,6 @@ const Header = () => {
             type='text'
             placeholder='Search Your Assets...'
             className={styles.searchInput}
-
           />
           <IoMdSearch fontSize={20} />
         </div>
@@ -53,8 +55,10 @@ const Header = () => {
           <div className={styles.menuItem}>New Releases</div>
           <div className={styles.menuItem}>Featured</div>
           {balance ? (
-
-            <div className={(styles.balance, styles.menuItem)} onClick={openModal}>
+            <div
+              className={(styles.balance, styles.menuItem)}
+              onClick={openModal}
+            >
               {balance}
               <FaCoins className={styles.coins} />
               <Modal isOpen={isModalOpen} transition={ModalTransition.SCALE}>

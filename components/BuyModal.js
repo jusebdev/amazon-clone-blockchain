@@ -22,7 +22,7 @@ const BuyModal = ({ close }) => {
 
 
     const { amountDue, setAmountDue, tokenAmount, setTokenAmount, isLoading, setIsLoading, etherscanLink, setEtherscanLink, buyTokens } = useContext(AmazonContext);
-    
+
     useEffect(() => {
         calculatePrice()
     }, [tokenAmount])

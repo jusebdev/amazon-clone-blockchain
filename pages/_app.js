@@ -3,7 +3,7 @@ import { MoralisProvider } from "react-moralis";
 //CONNECT TO MORALIS SERVER BEFORE TO START
 import { ModalProvider } from "react-simple-hook-modal";
 
-import { AmazonProvider, AMazonProvider } from "../context/AmazonContext";
+import { AmazonProvider} from "../context/AmazonContext";
 
 function MyApp({ Component, pageProps }) {
 	return (
