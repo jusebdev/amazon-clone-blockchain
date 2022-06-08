@@ -11,7 +11,7 @@ export const AmazonProvider = ({ children }) => {
 	const [assets, setAssets] = useState([]);
 	const [currentAccount, setCurrentAccount] = useState('');
 	const [tokenAmount, setTokenAmount] = useState('');
-	const [amontDue, setAmontDue] = useState('');
+	const [amontDue, setAmountDue] = useState('');
 	const [etherscanLink, setEtherscanLink] = useState('');
 	const [isLoading, setIsLoading] = useState(false);
 	const [balance, setBalance] = useState('');
@@ -147,11 +147,12 @@ export const AmazonProvider = ({ children }) => {
 				balance,
 				setTokenAmount,
 				amontDue,
-				setAmontDue,
+				setAmountDue,
 				isLoading,
 				setIsLoading,
 				setEtherscanLink,
 				currentAccount,
+				buyTokens
 			}}>
 			{children}
 		</AmazonContext.Provider>
